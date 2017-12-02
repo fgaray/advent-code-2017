@@ -4,7 +4,7 @@ import Utils
 import Data.List
 
 solve :: [[Int]] -> Int
-solve = sum . filter (/=0) . concat . map (mapOverNexts divisible)
+solve = sum . concat . map (mapOverNexts divisible)
     where
         divisible :: Int -> Int -> Int
         divisible x y
