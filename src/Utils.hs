@@ -40,3 +40,10 @@ readMatrix file = do
 mapOverNexts :: (a -> a -> b) -> [a] -> [b]
 mapOverNexts _ [] = []
 mapOverNexts f (x:xs) = map (f x) xs ++ mapOverNexts f xs
+
+
+manhattan :: (Int, Int) -> (Int, Int) -> Int
+manhattan (x, y) (x', y') = (abs (x - x')) + abs ((y - y'))
+
+eucledean :: (Int, Int) -> (Int, Int) -> Double
+eucledean (x, y) (x', y') = sqrt . fromIntegral $ (x - x')^2 + (y - y')^2
