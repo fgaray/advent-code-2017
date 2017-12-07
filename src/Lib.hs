@@ -14,6 +14,8 @@ import Day4.A
 import Day4.B
 import Day5.A
 import Day5.B
+import Day6.A
+import Day6.B
 
 import Utils
 
@@ -28,6 +30,8 @@ data Args =
     | Day4B { file :: String }
     | Day5A { file :: String }
     | Day5B { file :: String }
+    | Day6A { file :: String }
+    | Day6B { file :: String }
     deriving (Generic, Show)
 
 instance ParseRecord Args
@@ -41,8 +45,10 @@ lmain = do
         Day2A file -> readMatrix file >>= return . Day2.A.solve >>= print
         Day2B file -> readMatrix file >>= return . Day2.B.solve >>= print
         Day3A dat  -> return (Day3.A.solve dat) >>= print
-        Day3B dat -> return (Day3.B.solve dat) >>= print
+        Day3B dat  -> return (Day3.B.solve dat) >>= print
         Day4A file -> readFile file >>= return . Day4.A.solve . map words . lines >>= print
         Day4B file -> readFile file >>= return . Day4.B.solve . map words . lines >>= print
         Day5A file -> readFile file >>= return . Day5.A.solve . map read . lines >>= print
         Day5B file -> readFile file >>= return . Day5.B.solve . map read . lines >>= print
+        Day6A file -> undefined
+        Day6B file -> undefined

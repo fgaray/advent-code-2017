@@ -31,10 +31,13 @@ library
                        Day4.B
                        Day5.A
                        Day5.B
+                       Day6.A
+                       Day6.B
                        ZipList
   build-depends:       base >= 4.7 && < 5,
                        optparse-generic,
-                       containers
+                       containers,
+                       vector
   default-language:    Haskell2010
 
 executable advent-exe
